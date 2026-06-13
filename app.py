@@ -7,7 +7,7 @@ from gpt_lib import DEFAULT_MODEL_PATH, load_model
 
 app = Flask(__name__)
 
-MODEL_PATH = os.getenv("MODEL_PATH", str("output/mini_gpt.pth"))
+MODEL_PATH = os.getenv("MODEL_PATH", str("output/MiniGPT.pth")) # or use MeduimGPT.pth
 _loaded_model = None
 
 
