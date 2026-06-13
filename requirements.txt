@@ -1,0 +1,4 @@
+flask
+sentencepiece
+torch
+numpy
