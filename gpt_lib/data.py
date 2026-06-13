@@ -52,18 +52,14 @@ def read_tokens(path, limit):
     collected = []
     with open(path, "r", encoding="utf-8") as f:
         for line in f:
-            # 1. Controleer of de regel daadwerkelijk eindigt op een newline
             has_newline = line.endswith('\n')
             
-            # 2. Splits de woorden van de regel (dit haalt de \n weg)
             words = line.lower().split()
             collected.extend(words)
             
-            # 3. Voeg handmatig de '\n' toe als de regel die oorspronkelijk had
             if has_newline:
                 collected.append('\n')
                 
-            # 4. Check direct of we de limiet al hebben bereikt
             if len(collected) >= limit:
                 return collected[:limit]
                 
