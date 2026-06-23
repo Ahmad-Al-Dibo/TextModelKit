@@ -1,45 +1,63 @@
+***
+
 # MiniGPT
 
-MiniGPT is an educational project focused on understanding and analyzing how GPT-style Transformer language models work in practice.
+MiniGPT is a GPT-style language modeling project focused on building, analyzing, and evolving Transformer-based systems.
 
-> Note: This repository contains the **project report, results, configurations, and documentation only**.  
-> The source code is not included.
+This repository presents the **project report, results, configurations, and design decisions** behind MiniGPT.
 
-***
-
-# Project Purpose
-
-MiniGPT was created to explore the internal mechanics of small-scale Transformer-based language models.
-
-The main objectives are:
-
-* Understanding Transformer architecture from first principles
-* Experimenting with GPT-style training pipelines
-* Evaluating model performance and limitations
-* Comparing different model configurations
-
-This project is intended for learning and experimentation rather than production use.
+> Note: This repository currently contains documentation and results.  
+> The implementation is being developed into a **full reusable library** and will be added here.
 
 ***
 
-# Repository Contents
+# Project Goal
 
-This repository serves as a documentation and results showcase. It includes:
+The goal of MiniGPT is to evolve from an experimental project into a **real, modular language model library**.
+
+This includes:
+
+* Building a clean and extensible GPT-like framework
+* Supporting training, fine-tuning, and evaluation workflows
+* Enabling instruction-tuning and conversational models
+* Providing a structured and reusable codebase
+
+This repository documents the current progress and results of that process.
+
+***
+
+# Current Repository Contents
+
+This repository contains:
 
 * Model architecture descriptions
 * Training configurations
-* Evaluation results and analysis
+* Evaluation results and comparisons
 * Generated text examples
-* Model comparisons
-* Project insights and conclusions
+* Project analysis and insights
 
-It does not contain runnable code.
+It is currently focused on **documentation and reporting**, while the codebase is being prepared as a standalone library.
+
+***
+
+# Planned Library Features
+
+The upcoming MiniGPT library will include:
+
+* Transformer-based model architecture
+* Pretraining and fine-tuning support
+* Instruction-tuning pipeline
+* Modular trainer system
+* Dataset and tokenization utilities
+* Evaluation and diagnostics tools
+* Config-driven training workflows
+* Reusable API for experimentation
 
 ***
 
 # Overview
 
-MiniGPT follows a simplified language modeling pipeline:
+MiniGPT follows a standard autoregressive language modeling pipeline:
 
 ```text
 Raw Text
@@ -54,8 +72,6 @@ Next Token Prediction
     ↓
 Text Generation
 ```
-
-The design prioritizes clarity and interpretability over complexity or performance.
 
 ***
 
@@ -91,28 +107,28 @@ MiniGPT Model
 
 # Model Downloads
 
-| Model     | Description                               | Link                                                                     |
-| --------- | ----------------------------------------- | ------------------------------------------------------------------------ |
-| MiniGPT   | Baseline educational GPT model            | <https://drive.google.com/file/d/1ksxeEqtXhsuF287R_gQBwqTKp9zQ41No/view> |
-| MediumGPT | Improved model with better text coherence | <https://drive.google.com/file/d/1f938MeX0wDxJyksx042LjPyJ-zRdmyYl/view> |
+| Model     | Description                          | Link                                                                     |
+| --------- | ------------------------------------ | ------------------------------------------------------------------------ |
+| MiniGPT   | Baseline small GPT model             | <https://drive.google.com/file/d/1ksxeEqtXhsuF287R_gQBwqTKp9zQ41No/view> |
+| MediumGPT | Improved model with better coherence | <https://drive.google.com/file/d/1f938MeX0wDxJyksx042LjPyJ-zRdmyYl/view> |
 
 ***
 
 # Training Configurations
 
-Two configurations were used for experimentation:
+Two configurations were used during experimentation:
 
 ## MiniGPT
 
-* Small model focused on learning basic language patterns
+* Small model for initial experiments
 * Short context window
-* Faster training
+* Focus on basic language patterns
 
 ## MediumGPT
 
 * Increased model capacity
 * Larger context window
-* Improved generation quality
+* Improved text generation quality
 
 ***
 
@@ -134,16 +150,16 @@ Two configurations were used for experimentation:
 
 MiniGPT:
 
-* Learns basic grammar and token relationships
-* Struggles with maintaining long-range context
+* Learns basic grammatical patterns
+* Limited long-range context understanding
 
 MediumGPT:
 
-* Produces more coherent sentences
-* Maintains context more effectively
-* Shows improved semantic structure
+* Better sentence structure
+* Improved context retention
+* More coherent outputs
 
-Increasing model size and context leads to measurable improvements, though both models remain limited compared to large-scale systems.
+Increasing model size and context improves performance but remains far from large-scale systems.
 
 ***
 
@@ -171,48 +187,47 @@ the half-ling book one in the fall . after her mother had found herself ...
 
 # Observations
 
-* Small language models can learn grammatical patterns quickly
-* They struggle with long-term coherence
-* Context length strongly influences output quality
-* Model depth and attention capacity improve performance
+* Small models learn patterns quickly
+* Context length strongly affects quality
+* Model depth improves coherence
+* Scaling increases performance but does not solve all limitations
 
 ***
 
 # Limitations
 
-The project has several constraints:
-
 * Small parameter sizes
-* Limited training data
+* Limited datasets
 * Short context windows
-* No instruction tuning
-* No alignment techniques (e.g. RLHF)
+* No instruction tuning implemented yet
 * Limited reasoning capabilities
 
 ***
 
-# Future Work
+# Future Development
 
-Potential improvements include:
+MiniGPT is actively being developed into a full library. Planned next steps:
 
-* Larger models (5M–10M+ parameters)
-* Longer context windows
-* Instruction tuning support
-* Improved attention mechanisms
-* Better datasets
-* Expanded evaluation benchmarks
+* Modular codebase release
+* Complete training and fine-tuning pipeline
+* Instruction-tuning support
+* Improved training stability
+* Better evaluation tooling
+* API interface for experimentation
 
 ***
 
 # Summary
 
-MiniGPT is a learning-focused project that demonstrates:
+MiniGPT is a developing project aimed at building a structured GPT-style library.
 
-* How GPT-style models are structured
-* How training affects model behavior
-* What limitations small models have
+This repository provides:
 
-This repository provides a clear and structured view of the project, making it suitable for students, developers, and researchers exploring language models.
+* Design and architecture decisions
+* Experimental results
+* Model evaluations
+
+The next stage of the project is focused on delivering a **complete, reusable MiniGPT library**.
 
 ***
 
@@ -222,3 +237,5 @@ This repository provides a clear and structured view of the project, making it s
 2. Brown et al. — Language Models are Few-Shot Learners
 3. SentencePiece tokenizer
 4. PyTorch documentation
+
+***
